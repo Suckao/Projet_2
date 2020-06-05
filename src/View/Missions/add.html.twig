@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<body class="missionBody">
+    <div class="container-fluid">
+        <p>{{ success.text }}</p>
+        <img class="img-responsive" src="{{ success.gif }}">
+    </div>
+    <div class="container-fluid">
+        <div class="card shopping-cart missions">
+            <div class="card-header text-right missionHeader2">
+                <h7 class="missionTitle"><span class="missionBan">MISSIONS</span></h7>
+            </div>
+            <div class="card-body missions2">
+                <div class="row">
+                    <div class="col-1 text-center missionBox">
+                        <img class="img-responsive" src="{{ items.photo }}" alt="img" width="60" height="40">
+                    </div>
+                    <div class="col-2 missionBox">
+                        <h6 class="product-name"><small>{{ items.name }}</small></h6>
+                        <h6 class="missionText">
+                            <small>{{ items.description }}</small>
+                        </h6>
+                    </div>
+                    <div class="col-2 missionBox">
+                        <h6 class="product-name"><small>{{ items.mission_name }}</small></h6>
+                        <h6 class="missionText">
+                            <small>Level: </small></small><small class="missionLevel">{{ items.levelName }}</small><br>
+                            <small>Category: </small></small><small class="missionLevel">{{ categoryMission.msCat_type }}</small><br>
+                            <small>Mission: </small><small class="missionDescr">{{ items.mission_description }}</small>
+                        </h6>
+                    </div>
+                    <div class="col-4 missionBox">
+                        <h6 class="product-name"><small>Solution</small> </h6>
+                        {% include '/Missions/form.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

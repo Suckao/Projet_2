@@ -1,0 +1,7 @@
+<form method="POST">
+    <input type="hidden" value="{{ mission.missionId }}" name="id">
+    <textarea class="form-control" rows="3" name="solution" required>{{ mission.solution }}</textarea>
+        <div class="profileBtnBox">
+            <button type="submit" class="btn btn-sm pull-left mt-3 mr-3 profileBtn">Update</button>
+        </div>
+</form>

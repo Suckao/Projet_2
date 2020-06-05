@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<body class="bodyProfile">
+    <div class="container-fluid d-md-flex justify-content-space-between profile-space missionProfileBox">
+        <div class="container col-lg-8 col-md-8 col-sm-12">
+            <div class="card mb-4">
+                {% for mission in missions %}
+                    <div class="card-body missions">
+                        <div class="row">
+                            <div class="col-1 text-center missionBox">
+                                <img class="img-responsive" src="{{ mission.photo }}" alt="img" width="60" height="40">
+                            </div>
+                            <div class="col-2 missionBox">
+                                <h6 class="product-name"><small>{{ mission.name }}</small></h6>
+                                <h6 class="missionText">
+                                    <small>{{ mission.description }}</small>
+                                </h6>
+                            </div>
+                            <div class="col-2 missionBox">
+                                <h6 class="product-name"><small>{{ mission.mission_name }}</small></h6>
+                                <h6 class="missionText">
+                                    <small>Level: </small></small><small class="missionLevel">{{ mission.levelName }}</small><br>
+                                    <small>Category: </small></small><small class="missionLevel">{{ mission.type }}</small><br>
+                                    <small>Mission: </small><small class="missionDescr">{{ mission.mission_description }}</small>
+                                </h6>
+                            </div>
+                            <div class="col-4 missionBox">
+                                <h6 class="product-name"><small>Solution</small> </h6>
+                                {% include '/Missions/formUpdate.html.twig' %}
+                            </div>
+                            <div class="col-2 missionBox">
+                                <form method="POST">
+                                    <a href="/users/profile/{{ mission.mission_id }}" value="{{ mission.mission_id }}" name="mission_id" type="submit" class="btn btn-sm pull-left mt-3 mr-3 missionBtnTrash">Abort Mission</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container col-lg-4 col-md-4 col-sm-12 profileBox">
+            <div class="card card-profil mr-4">
+
+                <div class="card-body">
+                    <div class="card-avatar m-auto">
+                        {% if user.picture is empty %}
+                        <img src="/assets/images/avatar/{{anony}}" alt="" class="rounded-circle">
+                        {% else %}
+                        <img src="/assets/images/avatar/{{user.picture}}" alt="" class="rounded-circle">
+                        {% endif %}
+                    </div>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" name="files[]" >
+                        </div>
+                        <button type="submit" class="btn avatarBtn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </form>
+                    <hr class="my-4">
+                    <h2 class="text-center mb-4">Ola {{ session.nickname }} !</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi consectetur consequuntur deleniti dignissimos dolorem ex exercitationem fugit minus, modi officia placeat, praesentium quod tenetur unde voluptatem, voluptates. Magni, suscipit?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

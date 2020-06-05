@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<body class="cartBody">
+    <div class="container-fluid">
+        <div class="card shopping-cart missions">
+            <div class="card-header text-right missionHeader">
+                    <h7 class="missionTitle"><span class="missionBan">SELECTIONS</span></h7>
+                </div>
+                {% for mission in arrayMissions %}
+                <div class="card-body missions">
+                    <div class="row">
+                        <div class="col-2 text-center missionBox">
+                            <img class="img-responsive" src="{{ mission.photo }}" alt="img" width="60" height="40">
+                        </div>
+                        <div class="col-2 missionBox">
+                            <h6 class="product-name"><small>{{ mission.name }}</small></h6>
+                            <h6 class="missionText">
+                                <small>{{ mission.description }}</small>
+                            </h6>
+                        </div>
+                        <div class="col-2 missionBox">
+                            <h6 class="product-name"><small>{{ mission.mission_name }}</small></h6>
+                            <h6 class="missionText">
+                                <small>Level: </small></small><small class="missionLevel">{{ mission.levelName }}</small><br>
+                                <small>Category: </small></small><small class="missionLevel">{{ mission.type }}</small><br>
+                                <small>Mission: </small><small class="missionDescr">{{ mission.mission_description }}</small>
+                            </h6>
+                        </div>
+                        <div class="col-3 missionBox">
+                            <h6 class="product-name"><small>Details</small> </h6>
+                            <h6 class="missionText">
+                                <small>Status : </small><small class="missionDescr">{{ mission.status }}</small><br>
+                            </h6>
+                        </div>
+                        <div class="col-2 missionBox">
+                            <form method="POST">
+                            <input type="hidden" value="{{ mission.missionId }}" name="mission">
+                            <a href="/missions/add/{{ mission.missionId }}" type="submit" name="mission" class="btn btn-sm pull-right mt-2 mr-2 missionBtn">
+                                Enlist Now</a></form>
+                        </div>
+                        <div class="col-1 text-left m-0 p-0">{% include '/Missions/form_delete.html.twig' %}</div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

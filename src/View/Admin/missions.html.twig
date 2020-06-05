@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid d-md-flex justify-content-space-between profile-space">
+        {% include 'Admin/sidebar.html.twig' %}
+        <div class="container col-lg-7 col-md-7 col-sm-12">
+            {% for userMiss in usersMiss %}
+            <div class="card mb-4">
+                <div class="card-body my-3">
+                    <h2 class="card-title">{{ userMiss.nickname }}</h2>
+                    <h5 class="card-title"><strong>Title Mission: </strong>  {{ userMiss.name }}</h5>
+                    <p class="card-text"><strong>Description Mission: </strong>  {{ userMiss.description }}</p>
+                    <p class="card-text"><strong>Solution: </strong>  {{userMiss.solution}}</p>
+                    <a href="/Admin/delete/{{ userMiss.item_id }}" class="btn float-right">VALID</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% include 'Admin/profile.html.twig' %}
+    </div>
+{% endblock %}

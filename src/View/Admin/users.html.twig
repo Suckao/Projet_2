@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="container-fluid d-md-flex justify-content-space-between profile-space">
+    {% include 'Admin/sidebar.html.twig' %}
+    <div class="container col-lg-7 col-md-7 col-sm-12">
+        {% for user in users %}
+        <div class="card mb-4">
+            <div class="card-body my-3">
+                <h2 class="card-title">{{ user.nickname }}</h2>
+                <a href="/Admin/deleteUser/{{ user.id }}" class="btn float-right">DELETE</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% include 'Admin/profile.html.twig' %}
+</div>
+{% endblock %}

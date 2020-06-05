@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid d-md-flex justify-content-space-between">
+        <div class="container col-lg-8 col-sm-12">
+            <div class="card mb-4">
+                    <div class="card-body missions">
+                        <div class="row">
+                            <div class="col-1 text-center missionBox">
+                                <img class="img-responsive" src="{{ mission.photo }}" alt="img" width="60" height="40">
+                            </div>
+                            <div class="col-2 missionBox">
+                                <h6 class="product-name"><small>{{ mission.name }}</small></h6>
+                                <h6 class="missionText">
+                                    <small>{{ mission.description }}</small>
+                                </h6>
+                            </div>
+                            <div class="col-2 missionBox">
+                                <h6 class="product-name"><small>{{ mission.mission_name }}</small></h6>
+                                <h6 class="missionText">
+                                    <small>Level: </small></small><small class="missionLevel">{{ mission.levelName }}</small><br>
+                                    <small>Category: </small></small><small class="missionLevel">{{ mission.type }}</small><br>
+                                    <small>Mission: </small><small class="missionDescr">{{ mission.mission_description }}</small>
+                                </h6>
+                            </div>
+                            <div class="col-4 missionBox">
+                                <h6 class="product-name"><small>Solution</small> </h6>
+                                {% include '/Missions/formUpdate.html.twig' %}
+                            </div>
+                            <div class="col-2 missionBox">
+                                <h6 class="product-name"><small>Status</small> </h6>
+                                <small class="missionText">{{ mission.status }} </small><br>
+                                <input type="hidden" value="{{ mission.id }}" name="delete">
+                                <a href="users/delete/{{ mission.mission_id }}" type="submit" value="{{ mission.mission_id }}"
+                                   class="btn btn-sm pull-left mt-3 mr-3 missionBtnTrash">Abort Mission</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="container col-lg-4 col-sm-12">
+            <div class="card card-profile mr-4">
+                <div class="card-body">
+                    <div class="card-avatar m-auto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png" alt="">
+                    </div>
+                    <hr class="my-4">
+                    <h2 class="text-center mb-4">Ola {{ session.nickname }} !</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi consectetur consequuntur deleniti dignissimos dolorem ex exercitationem fugit minus, modi officia placeat, praesentium quod tenetur unde voluptatem, voluptates. Magni, suscipit?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid d-md-flex justify-content-space-between profile-space">
+        {% include 'Admin/sidebar.html.twig' %}
+        <div class="container col-lg-7 col-md-7 col-sm-12">
+            <div class="card mb-4">
+                <div class="car-body my-3">
+                    <h1 class="text-center">Edit Item {{ items.title }}</h1>
+                    {% include 'Admin/form.html.twig' %}
+                </div>
+            </div>
+        </div>
+        {% include 'Admin/profile.html.twig' %}
+    </div>
+{% endblock %}

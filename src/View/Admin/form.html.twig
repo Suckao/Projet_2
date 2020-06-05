@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <form method="POST" class="col-9">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id="title" value="{{ item.name }}"  required >
+            </div>
+            <div class="form-group">
+                <label for="picture">Picture</label>
+                <input type="text" class="form-control" name="picture" id="picture" value="{{ item.photo }}" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Item Description</label>
+                <textarea type="text" class="form-control" name="description" required>{{ item.description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Item Category</label>
+                <select class="form-control" name="item_category_id">
+                    {%  for categI in categItem %}
+                        <option value="{{ categI.id }}">{{ categI.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name_mission">Name Mission</label>
+                <input type="text" class="form-control" name="name_mission" id="name_mission" value="{{ mission.name }}" required>
+            </div>
+            <div class="form-group">
+                <label>Level Mission</label>
+                <select class="form-control" name="level_id">
+                    <option value="{{levelId.id}}">{{ levelId.name }}</option>
+                    {%  for level in levels %}
+                        <option value="{{ level.id }}">{{ level.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description_mission">Description Mission</label>
+                <textarea type="text" class="form-control" name="description_mission" id="description_mission" required>{{ mission.description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Category Mission</label>
+                <select class="form-control" name="mission_category_id">
+                    <option value="{{ categMissId.id }}">{{ categMissId.type }}</option>
+                    {%  for categM in categMission %}
+                        <option value="{{ categM.id }}">{{ categM.type }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn adminBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

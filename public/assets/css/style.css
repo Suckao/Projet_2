@@ -1,0 +1,348 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(14,14,14,1);
+    color: #fcfcfc;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 50px;
+}
+
+a {
+    color: #fcfcfc;
+    list-style-type: none;
+}
+a:hover {
+    color: #0080ff;
+}
+li {
+    list-style-type: none;
+}
+.footerBox {
+    display: flex;
+    justify-content: center;
+}
+.form-inline .form-control {
+    color: #fcfcfc;
+    border-color: #fcfcfc;
+    background-color: rgba(14,14,14,1);
+}
+
+.btn {
+    color:#e14eca;
+    border-color:#e926bf;
+}
+
+.btn:hover {
+    background-color: #e926bf;
+    color: rgba(14,14,14,1);
+}
+
+.searchBtn {
+    background-color: #e926bf;
+    color: #fcfcfc;
+}
+.searchBtn:hover {
+    background-color: #e926bf;
+    color: #fcfcfc;
+}
+
+.logoutBtn {
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #e926bf;
+}
+.adminBtn {
+    color:#e14eca;
+    border-color:#e926bf;
+}
+.card {
+    background-color: rgba(14,14,14,1);
+}
+
+.categ {
+    background: linear-gradient(-10rad, #e926bf, rgba(240,166,228,1));;
+    border-style: none;
+}
+
+/** REGISTER PAGE **/
+.container-fluid_register{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_register{
+    margin-top: 3em;
+}
+.btn_login{
+    margin-top: 3em;
+    margin-left: 20px;
+}
+/** END REGISTER PAGE **/
+/** LOGIN  PAGE **/
+ .mylogin
+ {
+     font-size: 45px;
+ }
+ 
+ .box {
+    border: 1px solid #c4c4c4;
+    padding: 30px 25px 10px 25px;
+    background: #fcfcfc;
+    margin: 30px auto;
+    width: 400px;
+  }
+  h1.box-logo a {
+    text-decoration:none;
+  }
+  h1.box-title {
+    color: #AEAEAE;
+    background: #f8f8f8;
+    font-weight: 300;
+    padding: 15px 25px;
+    line-height: 30px;
+    font-size: 25px;
+    text-align:center;
+    margin: -27px -26px 26px;
+  }
+  .box-button {
+    border-radius: 5px;
+    background: #d2483c;
+    text-align: center;
+    cursor: pointer;
+    font-size: 19px;
+    width: 100%;
+    height: 51px;
+    padding: 0;
+    color: #fff;
+    border: 0;
+    outline:0;
+  }
+  .box-register
+  {
+    text-align:center;
+    margin-bottom:0px;
+  }
+  .box-register a
+  {
+    text-decoration:none;
+    font-size:12px;
+    color:#666;
+  }
+  
+  .sucess{
+      text-align: center;
+      color: #fcfcfc;
+  }
+  .sucess a {
+      text-decoration: none;
+      color: #58aef7;
+  }
+  p.errorMessage {
+      background-color: #e66262;
+      border: #AA4502 1px solid;
+      padding: 5px 10px;
+      color: #fcfcfc;
+      border-radius: 3px;
+  }
+/** END LOGIN PAGE **/
+/** SHOP PAGE **/
+.shopTitle {
+    background: linear-gradient(2grad, #e926bf, #eb9fff);
+    padding: 0.5%;
+    border-style: solid;
+    border-color: rgba(252,252,252,0.2);
+    border-radius: 3px;
+}
+.bodyShop {
+    background-image: url("https://i.gifer.com/fyrX.gif");
+}
+
+.btnCateg {
+    background-color: rgba(14,14,14,1);
+    border-color: #0080ff;
+    color: #fcfcfc;
+}
+.btnCateg:hover {
+    background-color: rgba(14,14,14,1);
+    color: #fcfcfc;
+}
+.linksShop:hover {
+    color: #0080ff;
+}
+.btnShop {
+    background-color: #0080ff;
+    color: #fcfcfc;
+    border-style: none;
+    width: 170px;
+    position: absolute;
+}
+.btnAdmin {
+    
+}
+.btnShop:hover {
+    background-color: #e926bf;
+    color: #fcfcfc;
+}
+.paragShop {
+    font-size: 0.8em;
+    color: #f0a6e4;
+    margin: 0;
+}
+
+.flip-card-container {
+    width: 300px;
+    height: 450px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.flip-card-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+}
+
+.flip-card-front, .flip-card-back {
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    margin-top: -30px;
+}
+/** END SHOP PAGE **/
+/** PROFILE **/
+.bodyProfile {
+    background-color: #3569BA;
+}
+.profileBox,
+.missionProfileBox {
+    background-image: url("https://66.media.tumblr.com/c5543874b9cbe98da1d20945a45e989b/tumblr_o5a5r9Z9O71tvppquo1_r1_1280.gifv");
+}
+.card-avatar {
+    width: 150px;
+    height: 150px;
+}
+
+.card-avatar img {
+    width: 150px;
+    height: 150px;
+}
+.profileBtnBox {
+    display: flex;
+    justify-content: flex-end;
+}
+.profileBtn,
+.avatarBtn {
+    font-size: 70%;
+    background-color: rgba(14,14,14,1);
+    border-color: rgba(240,166,228,1);
+    color: rgba(240,166,228,1);
+    border-radius: 3px;
+}
+.profileBtn:hover {
+    background-color: rgba(240,166,228,1);
+    border-color: rgba(240,166,228,1);
+    color: rgba(14,14,14,1);
+}
+.avatarBtn:hover {
+    background-color: rgba(240,166,228,1);
+}
+
+@media only screen and (min-width: 720px) {
+    .sidebar-category, .card-profil {
+        position: fixed;
+    }
+    .profile-space {
+         padding-bottom: 400px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .btnShop{
+        width: 228px;
+    }
+}
+
+/** MISSIONS PAGE **/
+.cartBody {
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/9bc27292880429.5e569ff84e4d0.gif");
+}
+.missionBody {
+    background-color: #8561a0;
+}
+.missions {
+    background-color: rgba(14,14,14,1);
+    margin-top: 3%;
+}
+.missionHeader {
+    background-image: url(https://media0.giphy.com/media/3o6Zt4j96fDG4XzO0w/giphy.gif);
+}
+.missionHeader2 {
+    background-image: url("https://thumbs.gfycat.com/AliveGrimAvocet-size_restricted.gif");
+}
+.missionBan {
+    font-weight: bold;
+}
+.missionTitle {
+    color: #fcfcfc;
+    font-size: 3em;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.missions2 {
+    background-color: rgba(14,14,14,1);
+}
+.product-name {
+    color: #fcfcfc;
+}
+.missionLevel {
+    color: #fcfcfc;
+    font-weight: bold;
+}
+.missionDescr {
+    color: #fcfcfc;
+}
+.missionText,
+.missionBtn,
+.missionBtnTrash {
+    font-size: 70%;
+    color: rgba(240,166,228,1);
+}
+.missionBtn:hover {
+    background-color: rgba(240,166,228,1);
+    border-color: rgba(240,166,228,1);
+    color: rgba(14,14,14,1);
+}
+.missionBtnTrash:hover {
+    background-color: rgba(217,83,79,1);
+    border-color: rgba(217,83,79,1);
+    color: #fcfcfc;
+}
+.missionBtn{
+    background-color: rgba(14,14,14,1);
+    border-color: rgba(240,166,228,1);
+    color: rgba(240,166,228,1);
+    border-radius: 3px;
+}
+.missionBtnTrash {
+    background-color: rgba(14,14,14,1);
+    border-color: #fcfcfc;
+    color: #fcfcfc;
+    border-radius: 3px;
+}
+/** END MISSIONS PAGE **/

@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card shopping-cart missions">
+            <div class="card-header text-right missionHeader">
+                <h7 class="missionTitle"><span class="missionBan">MISSIONS</span></h7>
+            </div>
+            <div class="card-body missions">
+                <div class="row">
+                    <div class="col-1 text-center missionBox">
+                        <img class="img-responsive" src="{{ item.photo }}" alt="img" width="60" height="40">
+                    </div>
+                    <div class="col-2 missionBox">
+                        <h6 class="product-name"><small>{{ item.name }}</small></h6>
+                        <h6 class="missionText">
+                            <small>{{ item.description }}</small>
+                        </h6>
+                    </div>
+                    <div class="col-2 missionBox">
+                        <h6 class="product-name"><small>{{ item.mission_name }}</small></h6>
+                        <h6 class="missionText">
+                            <small>Level: </small></small><small class="missionLevel">{{ item.levelName }}</small><br>
+                            <small>Category: </small></small><small class="missionLevel">{{ categoryMission.type }}</small><br>
+                            <small>Mission: </small><small class="missionDescr">{{ item.mission_description }}</small>
+                        </h6>
+                    </div>
+                    <div class="col-3 missionBox">
+                        <h6 class="product-name"><small>Details</small> </h6>
+                        <h6 class="missionText">
+                            <small>Product Category : {{ item.item_category_id }}</small><br>
+                            <small>Status : {{ item.status_id }}</small><br>
+                            <small>Time Left : à ajouter dans BDD</small><br>
+                        </h6>
+                    </div>
+                    <div class="col-3 missionBox">
+                        <a href="/missions/add/{{ item.id }}" class="btn btn-sm pull-right mt-2 mr-2 missionBtn">Post Your Solution</a>
+                    </div>
+                    <div class="col-1 text-left m-0 p-0">{% include '/Missions/form_delete.html.twig' %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

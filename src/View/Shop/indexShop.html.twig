@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<body class="bodyShop">
+    <div class="container-fluid d-md-flex justify-content-space-between my-3">
+        <div class="container-sidebar col-md-2 col-lg-2">
+            <div class="row ml-4">
+                <div class="sidebar-category">
+                    <button class="btn mb-2 btnCateg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        CATEGORIES
+                    </button>
+                    <div class="sm-collapse" id="collapseExample">
+                        <div class="card card-body categ">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent linksShop"><strong>Level</strong></li>
+                                {% for level in levelItem %}
+                                    <li class="list-group-item bg-transparent linksShop">
+                                        <a class="linksShop" href="/Shop/indexShop/{{ level.id }}" alt="">{{ level.name }}</a>
+                                    </li>
+                                {% endfor %}
+                                <li class="list-group-item bg-transparent linksShop"><strong>Mission</strong></li>
+                                {% for categ in categoryMission %}
+                                    <li class="list-group-item bg-transparent linksShop">
+                                        <a class="linksShop" href="/Shop/indexShop/{{ categ.id }}" alt="">{{ categ.type }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-md-10 col-lg-10 col-sm-12">
+            <div class="row d-flex justify-content-center mt-5 mb-2">
+                <h4 class="shopTitle mb-4 shopTitle">🍬🍭 New Candies 🍭🍬</h4>
+            </div>
+            <div class="row justify-content-center">
+                {% for item in items %}
+                    <div class="card-deck col-sm-12 col-md-3 col-lg-3 flip-card-container">
+                        <div class="card mb-3 mx-2 flip-card">
+                            <div class="card-body d-flex flex-column">
+                                <img class="card-img-top flip-card-front" src={{ item.photo }}>
+                                <img class="card-img-top flip-card-back" src="https://media1.giphy.com/media/vJc55OQZMOojS/giphy.gif?cid=ecf05e47332c3c466b9364992f2dcbabc6c2305d49d48548&rid=giphy.gif">
+                                <h5 class="card-title mb-1 flip-card-front"> {{ item.name }} </h5>
+                                <p class="paragShop mb-2 flip-card-front"> Posted: {{ item.publication_date }}</p>
+                                <p class="flip-card-back card-text"> {{ item.description }} </p>
+                                {% if session.role == 1 %}
+                                    <a href="/shop/shop/{{ item.id }}" type="submit" name="selectMission" value="{{ item.id }}" class="btn btn-primary mt-auto btnShop flip-card-back">Take Mission</a>
+                                {% else %}
+                                    <div>
+                                        <a href="/Admin/edititem/{{ item.id }}" class="btn btnAdmin mt-2 bg-dark flip-card-back"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        <a href="/Admin/delete/{{ item.id }}" class="btn btnAdmin mt-2 bg-dark flip-card-back"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
